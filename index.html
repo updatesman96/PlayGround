@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#101813" />
+  <title>Lamb of the Hollow — A Tiny Roguelike</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-shell" aria-label="Lamb of the Hollow game">
+    <canvas id="game" aria-label="Game arena"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar" id="topbar" hidden>
+      <div class="brand"><span class="brand-mark">✦</span><div><b>THE HOLLOW</b><small>OATHBOUND</small></div></div>
+      <div class="run-stats"><span class="stat-icon heart">♥</span><div class="hearts" id="hearts"></div><span class="divider"></span><span class="soul-icon">✧</span><b id="souls">0</b><span class="wave-pill" id="wave">I / III</span></div>
+      <button class="icon-btn" id="pause-btn" aria-label="Pause">Ⅱ</button>
+    </header>
+    <section class="screen title-screen" id="title-screen">
+      <div class="title-copy">
+        <p class="eyebrow"><span></span> A LITTLE DARK FAIRYTALE <span></span></p>
+        <h1>LAMB OF<br><em>THE HOLLOW</em></h1>
+        <p class="intro">A lost lamb. A fallen shrine. One last oath.</p>
+        <button class="primary-btn" id="start-btn"><span>BEGIN THE RITUAL</span><b>↗</b></button>
+        <p class="controls-note">WASD / ARROWS TO MOVE <i>•</i> SPACE TO STRIKE <i>•</i> SHIFT TO DASH</p>
+      </div>
+      <div class="title-seal"><span>✦</span><small>NO CROWN<br>WITHOUT SACRIFICE</small></div>
+      <div class="bottom-caption">A solitary pilgrimage through the overgrown woods</div>
+    </section>
+    <section class="screen pause-screen" id="pause-screen" hidden>
+      <div class="panel"><p class="eyebrow">THE WOODS ARE QUIET</p><h2>PAUSED</h2><button class="primary-btn" id="resume-btn"><span>RETURN TO THE HOLLOW</span><b>↗</b></button><button class="text-btn" id="restart-btn">START A NEW PILGRIMAGE</button></div>
+    </section>
+    <section class="screen end-screen" id="end-screen" hidden>
+      <div class="panel"><p class="eyebrow" id="end-eyebrow">THE OATH IS FULFILLED</p><h2 id="end-title">THE HOLLOW IS YOURS</h2><p id="end-message"></p><button class="primary-btn" id="again-btn"><span>WALK THE PATH AGAIN</span><b>↗</b></button></div>
+    </section>
+    <div class="objective" id="objective" hidden><span class="objective-icon">✦</span><span id="objective-text">Clear the grove</span></div>
+    <div class="toast" id="toast" hidden></div>
+    <div class="mobile-controls" id="mobile-controls" hidden>
+      <div class="stick-zone" id="stick-zone"><div class="stick-ring"><div class="stick-knob" id="stick-knob"></div></div></div>
+      <div class="action-controls"><button class="action-btn dodge-btn" id="dodge-btn"><span>↗</span><small>DASH</small></button><button class="action-btn attack-btn" id="attack-btn"><span>✦</span><small>STRIKE</small></button></div>
+    </div>
+    <div class="mobile-hint" id="mobile-hint" hidden>MOVE <span>•</span> STRIKE <span>•</span> DASH</div>
+    <div class="screen-flash" id="screen-flash"></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
